@@ -1,14 +1,14 @@
 //
-//  Fish.m
+//  mutualFriendView.m
 //  catchbeta
 //
-//  Created by Brian Clouser on 4/27/16.
+//  Created by Brian Clouser on 5/4/16.
 //  Copyright © 2016 Clouser. All rights reserved.
 //
 
-#import "FishView.h"
+#import "MutualFriendView.h"
 
-@interface FishView ()
+@interface MutualFriendView ()
 
 @property (strong, nonatomic) IBOutlet UIView *contentView;
 
@@ -16,7 +16,7 @@
 
 @end
 
-@implementation FishView
+@implementation MutualFriendView
 
 -(instancetype)initWithFrame:(CGRect)frame
 {
@@ -46,31 +46,15 @@
 {
     
     
-    [[NSBundle mainBundle] loadNibNamed:@"RedFish" owner:self options:nil];
+    [[NSBundle mainBundle] loadNibNamed:@"MutualFriend" owner:self options:nil];
     
     [self addSubview:self.contentView];
     
     self.contentView.frame = self.bounds;
     
-    
-
-    
+    self.friendPicture.layer.cornerRadius = 25;
     
 }
-
-- (IBAction)faceTapped:(id)sender
-{
-    
-    [self.delegate fishtapped:self.person];
-    
-}
-- (IBAction)fishTapped:(id)sender
-{
-    [self.delegate fishtapped:self.person];
-}
-
-
-
 
 
 @end

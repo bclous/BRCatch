@@ -15,6 +15,11 @@
 		AB2A38DC1CD1A709005DD03A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB2A38DA1CD1A709005DD03A /* LaunchScreen.storyboard */; };
 		AB2A38E51CD1AB9B005DD03A /* FishView.m in Sources */ = {isa = PBXBuildFile; fileRef = AB2A38E41CD1AB9B005DD03A /* FishView.m */; };
 		AB2A38E71CD268D0005DD03A /* RedFish.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB2A38E61CD268D0005DD03A /* RedFish.xib */; };
+		AB2A38EA1CDA4331005DD03A /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = AB2A38E91CDA4331005DD03A /* Person.m */; };
+		AB2A38EC1CDA4606005DD03A /* Profile.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB2A38EB1CDA4606005DD03A /* Profile.xib */; };
+		AB2A38EF1CDA5851005DD03A /* ProfileView.m in Sources */ = {isa = PBXBuildFile; fileRef = AB2A38EE1CDA5851005DD03A /* ProfileView.m */; };
+		AB2A38F11CDA7FE4005DD03A /* MutualFriend.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB2A38F01CDA7FE4005DD03A /* MutualFriend.xib */; };
+		AB2A38F41CDA826D005DD03A /* MutualFriendView.m in Sources */ = {isa = PBXBuildFile; fileRef = AB2A38F31CDA826D005DD03A /* MutualFriendView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +36,14 @@
 		AB2A38E31CD1AB9B005DD03A /* FishView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FishView.h; sourceTree = "<group>"; };
 		AB2A38E41CD1AB9B005DD03A /* FishView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FishView.m; sourceTree = "<group>"; };
 		AB2A38E61CD268D0005DD03A /* RedFish.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RedFish.xib; sourceTree = "<group>"; };
+		AB2A38E81CDA4331005DD03A /* Person.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Person.h; sourceTree = "<group>"; };
+		AB2A38E91CDA4331005DD03A /* Person.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Person.m; sourceTree = "<group>"; };
+		AB2A38EB1CDA4606005DD03A /* Profile.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Profile.xib; sourceTree = "<group>"; };
+		AB2A38ED1CDA5851005DD03A /* ProfileView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileView.h; sourceTree = "<group>"; };
+		AB2A38EE1CDA5851005DD03A /* ProfileView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileView.m; sourceTree = "<group>"; };
+		AB2A38F01CDA7FE4005DD03A /* MutualFriend.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MutualFriend.xib; sourceTree = "<group>"; };
+		AB2A38F21CDA826D005DD03A /* MutualFriendView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MutualFriendView.h; sourceTree = "<group>"; };
+		AB2A38F31CDA826D005DD03A /* MutualFriendView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MutualFriendView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,7 +82,15 @@
 				AB2A38D31CD1A709005DD03A /* ViewController.m */,
 				AB2A38E31CD1AB9B005DD03A /* FishView.h */,
 				AB2A38E41CD1AB9B005DD03A /* FishView.m */,
+				AB2A38E81CDA4331005DD03A /* Person.h */,
+				AB2A38E91CDA4331005DD03A /* Person.m */,
 				AB2A38E61CD268D0005DD03A /* RedFish.xib */,
+				AB2A38EB1CDA4606005DD03A /* Profile.xib */,
+				AB2A38ED1CDA5851005DD03A /* ProfileView.h */,
+				AB2A38EE1CDA5851005DD03A /* ProfileView.m */,
+				AB2A38F01CDA7FE4005DD03A /* MutualFriend.xib */,
+				AB2A38F21CDA826D005DD03A /* MutualFriendView.h */,
+				AB2A38F31CDA826D005DD03A /* MutualFriendView.m */,
 				AB2A38D51CD1A709005DD03A /* Main.storyboard */,
 				AB2A38D81CD1A709005DD03A /* Assets.xcassets */,
 				AB2A38DA1CD1A709005DD03A /* LaunchScreen.storyboard */,
@@ -145,7 +166,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				AB2A38DC1CD1A709005DD03A /* LaunchScreen.storyboard in Resources */,
+				AB2A38F11CDA7FE4005DD03A /* MutualFriend.xib in Resources */,
 				AB2A38E71CD268D0005DD03A /* RedFish.xib in Resources */,
+				AB2A38EC1CDA4606005DD03A /* Profile.xib in Resources */,
 				AB2A38D91CD1A709005DD03A /* Assets.xcassets in Resources */,
 				AB2A38D71CD1A709005DD03A /* Main.storyboard in Resources */,
 			);
@@ -160,7 +183,10 @@
 			files = (
 				AB2A38D41CD1A709005DD03A /* ViewController.m in Sources */,
 				AB2A38D11CD1A709005DD03A /* AppDelegate.m in Sources */,
+				AB2A38F41CDA826D005DD03A /* MutualFriendView.m in Sources */,
+				AB2A38EA1CDA4331005DD03A /* Person.m in Sources */,
 				AB2A38CE1CD1A709005DD03A /* main.m in Sources */,
+				AB2A38EF1CDA5851005DD03A /* ProfileView.m in Sources */,
 				AB2A38E51CD1AB9B005DD03A /* FishView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -308,6 +334,7 @@
 				AB2A38E21CD1A709005DD03A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
