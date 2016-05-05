@@ -10,13 +10,12 @@
 #import "FishView.h"
 
 @interface ViewController () <UIScrollViewDelegate>
-
+@property (weak, nonatomic) IBOutlet UIImageView *halfMileBouy;
 @property (weak, nonatomic) IBOutlet UIView *oceanView;
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (strong, nonatomic) NSMutableArray *fishes;
 @property (strong, nonatomic) NSArray *facePics;
 @property (strong, nonatomic) NSArray *fishPics;
-
 @property (nonatomic) CGFloat fishWidth;
 @property (nonatomic) CGFloat fishHeight;
 
@@ -28,9 +27,10 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
-     [self setUpOceanGradient];
+//     [self setUpOceanGradient];
     
     self.scrollView.delegate = self;
+    [self.oceanView addSubview:self.halfMileBouy];
     
     
 
@@ -40,6 +40,9 @@
 
 -(void)viewDidAppear:(BOOL)animated
 {
+    
+    self.oceanView.translatesAutoresizingMaskIntoConstraints = NO;
+    
     [self setUpFishViews];
 }
 
@@ -54,15 +57,21 @@
     return self.oceanView;
 }
 
+
+
+
+
 -(void)setUpFishViews
 {
 
     self.facePics = @[ @"ana", @"christine", @"courtney", @"katie", @"katie2", @"laura", @"mikayla" ];
     
-    self.fishPics = @[ @"greenFish", @"orangeFish", @"purpleFish", @"redfish", @"yellowFish"];
+//    self.fishPics = @[ @"greenFish", @"orangeFish", @"purpleFish", @"redFish", @"yellowFish"];
     
-    self.fishHeight = 40;
-    self.fishWidth = 80;
+        self.fishPics = @[ @"redFish", @"redFish", @"redFish", @"redFish", @"redFish"];
+    
+    self.fishHeight = 20;
+    self.fishWidth = 40;
     
     
 
@@ -138,42 +147,42 @@
     
 }
 
--(void)setUpOceanGradient
-{
-    
-    self.oceanView.layer.masksToBounds = YES;
-    
-    UIColor *color = [UIColor blackColor];
-    
-    //self.oceanView.backgroundColor = color;
-    
-    CAGradientLayer *gradientBg = [CAGradientLayer layer];
-    gradientBg.frame = self.oceanView.frame;
-    gradientBg.frame = self.oceanView.bounds;
-    gradientBg.colors = [NSArray arrayWithObjects:
-                         (id)color.CGColor,
-                         (id)[UIColor blueColor].CGColor,
-                         nil];
-    // vertical gradient
-    gradientBg.locations = [NSArray arrayWithObjects:
-                            [NSNumber numberWithFloat:0.0f],
-                            [NSNumber numberWithFloat:1.0f],
-                            nil];
-    
-    // gradient background
-    CALayer *layer = self.oceanView.layer;
-    layer.masksToBounds = YES;
-    [layer insertSublayer:gradientBg atIndex:0];
-}
+//-(void)setUpOceanGradient
+//{
+//    
+//    self.oceanView.layer.masksToBounds = YES;
+//    
+//    UIColor *color = [UIColor blackColor];
+//    
+//    //self.oceanView.backgroundColor = color;
+//    
+//    CAGradientLayer *gradientBg = [CAGradientLayer layer];
+//    gradientBg.frame = self.oceanView.frame;
+//    gradientBg.frame = self.oceanView.bounds;
+//    gradientBg.colors = [NSArray arrayWithObjects:
+//                         (id)color.CGColor,
+//                         (id)[UIColor blueColor].CGColor,
+//                         nil];
+//    // vertical gradient
+//    gradientBg.locations = [NSArray arrayWithObjects:
+//                            [NSNumber numberWithFloat:0.0f],
+//                            [NSNumber numberWithFloat:1.0f],
+//                            nil];
+//    
+//    // gradient background
+//    CALayer *layer = self.oceanView.layer;
+//    layer.masksToBounds = YES;
+//    [layer insertSublayer:gradientBg atIndex:0];
+//}
 
 
 -(void)addFishToOcean
 {
     
-    for (NSUInteger i = 0; i<= 1000; i++)
+    for (NSUInteger i = 0; i<= 500; i++)
     {
-        CGFloat maxX = self.oceanView.frame.size.width;
-        CGFloat maxY = self.oceanView.frame.size.height;
+        CGFloat maxX = self.oceanView.frame.size.width - 100;
+        CGFloat maxY = self.oceanView.frame.size.height - 100;
         
         CGFloat xPosition = arc4random_uniform(maxX);
         CGFloat yPosition = arc4random_uniform(maxY);
@@ -181,13 +190,13 @@
         NSUInteger faceIndex = i%7;
         NSUInteger fishIndex = i%5;
     
-        FishView *newFish = [[FishView alloc] initWithFrame:CGRectMake(xPosition, yPosition, self.fishWidth, self.fishHeight )];
+        FishView *newFish = [[FishView alloc] initWithFrame:CGRectMake(xPosition, yPosition + 50, self.fishWidth, self.fishHeight )];
         
         newFish.facePicture.image = [UIImage imageNamed: self.facePics[faceIndex]];
         newFish.fishImage.image = [UIImage imageNamed:self.fishPics[fishIndex]];
         
         newFish.startingX = xPosition;
-        newFish.startingY = yPosition;
+        newFish.startingY = yPosition + 50;
 
         [self.oceanView addSubview:newFish];
         
@@ -207,45 +216,45 @@
 }
 
 
--(UIColor *)colorFromInteger:(NSUInteger)number
-{
-    
-    if (number == 0)
-    {
-        return [UIColor blueColor];
-    }
-    
-    else if (number == 1)
-    {
-        return [UIColor redColor];
-    }
-    
-    else if (number == 2)
-    {
-        return [UIColor orangeColor];
-    }
-    
-    else if (number == 3)
-    {
-        return [UIColor yellowColor];
-    }
-    
-    else if (number == 4)
-    {
-        return [UIColor grayColor];
-    }
-    
-    else if (number == 5)
-    {
-        return [UIColor greenColor];
-    }
-    
-    else
-    {
-        return [UIColor blackColor];
-    }
-    
-}
+//-(UIColor *)colorFromInteger:(NSUInteger)number
+//{
+//    
+//    if (number == 0)
+//    {
+//        return [UIColor blueColor];
+//    }
+//    
+//    else if (number == 1)
+//    {
+//        return [UIColor redColor];
+//    }
+//    
+//    else if (number == 2)
+//    {
+//        return [UIColor orangeColor];
+//    }
+//    
+//    else if (number == 3)
+//    {
+//        return [UIColor yellowColor];
+//    }
+//    
+//    else if (number == 4)
+//    {
+//        return [UIColor grayColor];
+//    }
+//    
+//    else if (number == 5)
+//    {
+//        return [UIColor greenColor];
+//    }
+//    
+//    else
+//    {
+//        return [UIColor blackColor];
+//    }
+//    
+//}
 
 
 
