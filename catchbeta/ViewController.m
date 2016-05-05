@@ -8,8 +8,11 @@
 
 #import "ViewController.h"
 #import "FishView.h"
+#import "ProfileView.h"
 
-@interface ViewController () <UIScrollViewDelegate>
+@interface ViewController () <UIScrollViewDelegate, FishViewDelegate, ProfileViewDelegate>
+
+
 @property (weak, nonatomic) IBOutlet UIImageView *halfMileBouy;
 @property (weak, nonatomic) IBOutlet UIView *oceanView;
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
@@ -18,6 +21,13 @@
 @property (strong, nonatomic) NSArray *fishPics;
 @property (nonatomic) CGFloat fishWidth;
 @property (nonatomic) CGFloat fishHeight;
+
+@property (strong, nonatomic) ProfileView *profile;
+
+@property (strong, nonatomic) NSLayoutConstraint *profileHeight;
+@property (strong, nonatomic) NSLayoutConstraint *profileWidth;
+
+
 
 @end
 
@@ -31,6 +41,7 @@
     
     self.scrollView.delegate = self;
     [self.oceanView addSubview:self.halfMileBouy];
+    
     
     
 
@@ -192,6 +203,8 @@
     
         FishView *newFish = [[FishView alloc] initWithFrame:CGRectMake(xPosition, yPosition + 50, self.fishWidth, self.fishHeight )];
         
+        newFish.delegate = self;
+        
         newFish.facePicture.image = [UIImage imageNamed: self.facePics[faceIndex]];
         newFish.fishImage.image = [UIImage imageNamed:self.fishPics[fishIndex]];
         
@@ -255,6 +268,96 @@
 //    }
 //    
 //}
+
+-(void)fishtapped:(Person *)person
+{
+    
+    [self launchProfileView];
+    
+    
+}
+
+-(void)cancelTapped
+{
+    [self leaveProfileView];
+}
+
+
+
+
+-(void)launchProfileView
+{
+    
+    self.profile = [[ProfileView alloc] init];
+    
+    [self.view addSubview:self.profile];
+    
+    self.profile.translatesAutoresizingMaskIntoConstraints = NO;
+    
+    [self.profile.centerXAnchor  constraintEqualToAnchor:self.view.centerXAnchor].active = YES;
+    [self.profile.centerYAnchor constraintEqualToAnchor:self.view.centerYAnchor].active = YES;
+    
+    self.profileHeight = [self.profile.heightAnchor constraintEqualToConstant:5];
+    self.profileWidth = [self.profile.widthAnchor constraintEqualToConstant:5];
+    
+    self.profileHeight.active = YES;
+    self.profileWidth.active = YES;
+    
+    //self.profile.layer.cornerRadius = 50;
+    
+    
+    [UIView animateWithDuration:.2 animations:^{
+        
+        self.profileWidth.active = NO;
+        self.profileHeight.active = NO;
+        
+        self.profileWidth = [self.profile.widthAnchor constraintEqualToAnchor:self.view.widthAnchor multiplier:.95 constant:0];
+        self.profileHeight = [self.profile.heightAnchor constraintEqualToAnchor:self.view.heightAnchor multiplier:.95 constant:0];
+        
+        self.profileWidth.active = YES;
+        self.profileHeight.active = YES;
+        
+        [self.view layoutIfNeeded];
+        
+    } completion:^(BOOL finished) {
+        
+        self.profile.delegate = self;
+        
+    }];
+    
+    
+    
+    
+}
+
+-(void)leaveProfileView
+{
+    
+    [UIView animateWithDuration:.2 animations:^{
+        
+        self.profileWidth.active = NO;
+        self.profileHeight.active = NO;
+        
+        self.profileWidth = [self.profile.widthAnchor constraintEqualToConstant:5];
+                             
+        self.profileHeight = [self.profile.heightAnchor constraintEqualToConstant:5];
+        
+        
+        self.profileWidth.active = YES;
+        self.profileHeight.active = YES;
+        
+        [self.view layoutIfNeeded];
+        
+    } completion:^(BOOL finished) {
+        
+        [self.profile removeFromSuperview];
+        
+    }];
+    
+}
+
+
+
 
 
 
