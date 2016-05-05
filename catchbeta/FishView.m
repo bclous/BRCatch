@@ -43,6 +43,7 @@
 }
 
 -(void)commonInit
+
 {
     
     
@@ -52,21 +53,22 @@
     
     self.contentView.frame = self.bounds;
     
-    
-
-    
-    
 }
 
 - (IBAction)faceTapped:(id)sender
+
 {
     
     [self.delegate fishtapped:self.person];
     
 }
+
 - (IBAction)fishTapped:(id)sender
+
 {
+    
     [self.delegate fishtapped:self.person];
+
 }
 
 

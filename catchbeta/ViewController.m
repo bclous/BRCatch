@@ -14,6 +14,9 @@
 
 
 @property (weak, nonatomic) IBOutlet UIImageView *halfMileBouy;
+@property (weak, nonatomic) IBOutlet UIImageView *boat;
+@property (weak, nonatomic) IBOutlet UIImageView *profilePic;
+
 @property (weak, nonatomic) IBOutlet UIView *oceanView;
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (strong, nonatomic) NSMutableArray *fishes;
@@ -41,6 +44,8 @@
     
     self.scrollView.delegate = self;
     [self.oceanView addSubview:self.halfMileBouy];
+    [self.oceanView addSubview:self.boat];
+        [self.oceanView addSubview:self.profilePic];
     
     
     
@@ -79,7 +84,7 @@
     
 //    self.fishPics = @[ @"greenFish", @"orangeFish", @"purpleFish", @"redFish", @"yellowFish"];
     
-        self.fishPics = @[ @"redFish", @"redFish", @"redFish", @"redFish", @"redFish"];
+        self.fishPics = @[ @"fishTestRight", @"fishTestRight", @"fishTestRight", @"fishTestRight", @"fishTestRight"];
     
     self.fishHeight = 20;
     self.fishWidth = 40;
@@ -118,9 +123,11 @@
         }
         
         
-        NSUInteger time = arc4random_uniform(5);
+        NSUInteger time = arc4random_uniform(10);
         
         [UIView animateWithDuration:time + 5 delay:0 options:UIViewAnimationOptionAllowUserInteraction animations:^{
+            
+            [fishView.fishImage setImage:[UIImage imageNamed:@"fishTestRight"]];
             
             fishView.frame = CGRectMake(xPosition, yPosition, self.fishWidth, self.fishHeight);
             
@@ -140,8 +147,11 @@
          NSLog(@"in the else");
         
          NSUInteger time = arc4random_uniform(5);
+    
         
         [UIView animateWithDuration:time + 5 delay:0 options:UIViewAnimationOptionAllowUserInteraction animations:^{
+            
+            [fishView.fishImage setImage:[UIImage imageNamed:@"fishTestLeft"]];
             
             fishView.frame = CGRectMake(fishView.startingX, fishView.startingY, self.fishWidth, self.fishHeight);
             
@@ -199,14 +209,14 @@
         CGFloat yPosition = arc4random_uniform(maxY);
         
         NSUInteger faceIndex = i%7;
-        NSUInteger fishIndex = i%5;
+//        NSUInteger fishIndex = i%5;
     
         FishView *newFish = [[FishView alloc] initWithFrame:CGRectMake(xPosition, yPosition + 50, self.fishWidth, self.fishHeight )];
         
         newFish.delegate = self;
         
         newFish.facePicture.image = [UIImage imageNamed: self.facePics[faceIndex]];
-        newFish.fishImage.image = [UIImage imageNamed:self.fishPics[fishIndex]];
+        newFish.fishImage.image = [UIImage imageNamed:@"fishTestLeft"];
         
         newFish.startingX = xPosition;
         newFish.startingY = yPosition + 50;
