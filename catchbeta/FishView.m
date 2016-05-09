@@ -11,6 +11,8 @@
 @interface FishView ()
 
 @property (strong, nonatomic) IBOutlet UIView *contentView;
+@property (strong, nonatomic) IBOutlet UITapGestureRecognizer *pictureTapGestureRecognizer;
+@property (strong, nonatomic) IBOutlet UITapGestureRecognizer *fishTapGestureRecognizer;
 
 
 
@@ -55,21 +57,9 @@
     
 }
 
-- (IBAction)faceTapped:(id)sender
 
-{
-    
-    [self.delegate fishtapped:self.person];
-    
-}
 
-- (IBAction)fishTapped:(id)sender
 
-{
-    
-    [self.delegate fishtapped:self.person];
-
-}
 
 
 
