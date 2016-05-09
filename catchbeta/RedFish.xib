@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -30,7 +30,7 @@
                         <outletCollection property="gestureRecognizers" destination="l1w-9O-VEE" appends="YES" id="AX4-he-mK2"/>
                     </connections>
                 </imageView>
-                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fistTestRight" translatesAutoresizingMaskIntoConstraints="NO" id="M9Q-27-KG9">
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fishTestRight" translatesAutoresizingMaskIntoConstraints="NO" id="M9Q-27-KG9">
                     <rect key="frame" x="0.0" y="0.0" width="464" height="256"/>
                     <gestureRecognizers/>
                     <connections>
@@ -62,6 +62,6 @@
         </tapGestureRecognizer>
     </objects>
     <resources>
-        <image name="fistTestRight" width="2280" height="1408"/>
+        <image name="fishTestRight" width="1154" height="719"/>
     </resources>
 </document>

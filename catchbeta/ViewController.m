@@ -30,6 +30,13 @@
 @property (strong, nonatomic) NSLayoutConstraint *profileHeight;
 @property (strong, nonatomic) NSLayoutConstraint *profileWidth;
 
+@property (strong, nonatomic) NSLayoutConstraint *boatTopConstaint;
+@property (strong, nonatomic) NSLayoutConstraint *boatLeftConstraint;
+
+@property (assign, nonatomic) CGFloat zoomScaleFloat;
+
+@property (weak, nonatomic) IBOutlet UIImageView *sun;
+@property (assign, nonatomic) BOOL zoomingBool;
 
 
 @end
@@ -45,7 +52,26 @@
     self.scrollView.delegate = self;
     [self.oceanView addSubview:self.halfMileBouy];
     [self.oceanView addSubview:self.boat];
-        [self.oceanView addSubview:self.profilePic];
+    [self.oceanView addSubview:self.profilePic];
+    [self.oceanView addSubview:self.sun];
+    [self.boat addSubview:self.profilePic];
+    
+    [self.boat setTranslatesAutoresizingMaskIntoConstraints:NO];
+    [self.sun setTranslatesAutoresizingMaskIntoConstraints:NO];
+    [self.profilePic setTranslatesAutoresizingMaskIntoConstraints:NO];
+//    [self.boat.leftAnchor constraintEqualToAnchor:self.view.leftAnchor constant:10].active = YES;
+
+//    [self.boat.topAnchor constraintEqualToAnchor:self.view.topAnchor constant:50].active = YES;
+    
+    [self.sun.rightAnchor constraintEqualToAnchor:self.view.rightAnchor constant:-20].active = YES;
+    [self.profilePic.leftAnchor constraintEqualToAnchor:self.view.leftAnchor constant:45].active = YES;
+    
+    self.zoomScaleFloat = self.scrollView.zoomScale;
+    
+
+    
+
+    
     
     
     
@@ -59,6 +85,8 @@
     
     self.oceanView.translatesAutoresizingMaskIntoConstraints = NO;
     
+
+    
     [self setUpFishViews];
 }
 
@@ -68,10 +96,67 @@
 }
 
 - (nullable UIView *)viewForZoomingInScrollView:(UIScrollView *)scrollView
-{
 
+
+{
+//    float zoomNumber = self.scrollView.zoomScale;
+    
+
+    
+    NSLog(@"ZOOMING BOOL %d", self.zoomingBool);
+    
+    [self.boat.leftAnchor constraintEqualToAnchor:self.view.leftAnchor constant:0].active = NO;
+    
+    NSLog(@"THIS IS THE ZOOM SCALE %f", self.zoomScaleFloat);
+//
+//    [self.boat.leftAnchor constraintEqualToAnchor:self.view.leftAnchor constant:10 + self.scrollView.contentOffset.x].active = NO;
+    
     return self.oceanView;
 }
+
+- (void)scrollViewDidEndZooming:(UIScrollView *)scrollView withView:(nullable UIView *)view atScale:(CGFloat)scale {
+    
+    
+    NSLog(@"ZOOMING BOOL %d", self.zoomingBool);
+    
+    
+}
+
+
+
+ - (void)scrollViewDidScroll:(UIScrollView *)sender {
+     
+         
+         if (self.scrollView.contentOffset.x > 0 || self.scrollView.contentOffset.x < 0) {
+             
+             NSLog(@"%f", self.scrollView.contentOffset.x);
+             
+             NSLog(@"GETTING INTO THE X OFFSET");
+             
+             [self.boat.leftAnchor constraintEqualToAnchor:self.view.leftAnchor constant:10 + self.scrollView.contentOffset.x].active = NO;
+             
+             //         [self.boat setTranslatesAutoresizingMaskIntoConstraints:NO];
+             [self.boat.leftAnchor constraintEqualToAnchor:self.scrollView.leftAnchor constant:10 + self.scrollView.contentOffset.x].active = YES;
+             [self.sun.rightAnchor constraintEqualToAnchor:self.view.rightAnchor constant: -20 + self.scrollView.contentOffset.x].active = YES;
+                 [self.profilePic.leftAnchor constraintEqualToAnchor:self.view.leftAnchor constant:50 + self.scrollView.contentOffset.x].active = YES;
+             
+         }
+         
+         if (self.scrollView.contentOffset.y > 0 || self.scrollView.contentOffset.y < 0) {
+             
+             NSLog(@"GETTING INTO THE Y OFFSET");
+             
+             
+             [self.boat.topAnchor constraintEqualToAnchor:self.view.topAnchor constant:50 - self.scrollView.contentOffset.y].active = NO;
+         }
+         
+         NSLog(@"THIS IS WORKING");
+
+ 
+     
+     
+     
+ }
 
 
 
@@ -105,7 +190,7 @@
     if (fishView.frame.origin.x == fishView.startingX)
     {
         
-        NSLog(@"in the if");
+//        NSLog(@"in the if");
         
         CGFloat randomXMove = 50;
         CGFloat randomYMove = 0;
@@ -144,7 +229,7 @@
     else
     {
         
-         NSLog(@"in the else");
+//         NSLog(@"in the else");
         
          NSUInteger time = arc4random_uniform(5);
     
@@ -223,7 +308,7 @@
 
         [self.oceanView addSubview:newFish];
         
-        NSUInteger colorNumber = arc4random_uniform(6);
+//        NSUInteger colorNumber = arc4random_uniform(6);
         
         //newFish.backgroundColor = [self colorFromInteger:colorNumber];
         
@@ -234,7 +319,7 @@
     
     }
     
-    NSLog(@"Done BUILDING FISHESSSS\n\n\n\n\n\n");
+//    NSLog(@"Done BUILDING FISHESSSS\n\n\n\n\n\n");
     
 }
 
