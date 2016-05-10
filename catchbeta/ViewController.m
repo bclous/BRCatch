@@ -29,6 +29,7 @@
 
 @property (strong, nonatomic) NSLayoutConstraint *profileHeight;
 @property (strong, nonatomic) NSLayoutConstraint *profileWidth;
+@property (strong, nonatomic) IBOutlet UITapGestureRecognizer *oceanTapGestureRecognizer;
 
 @property (strong, nonatomic) NSLayoutConstraint *boatTopConstaint;
 @property (strong, nonatomic) NSLayoutConstraint *boatLeftConstraint;
@@ -75,6 +76,8 @@
     
     
     
+    
+    
 
     
    
@@ -84,10 +87,9 @@
 {
     
     self.oceanView.translatesAutoresizingMaskIntoConstraints = NO;
-    
-
-    
+    self.profile = [[ProfileView alloc] init];
     [self setUpFishViews];
+
 }
 
 - (void)didReceiveMemoryWarning {
@@ -182,6 +184,76 @@
     
     
 }
+- (IBAction)oceanTapped:(id)sender
+{
+    NSLog(@"ocean tapped");
+    
+    CGPoint locationOfTap = [self.oceanTapGestureRecognizer locationInView:self.oceanView];
+    
+    CGFloat x = locationOfTap.x;
+    CGFloat y = locationOfTap.y;
+    
+    FishView *tappedFish = [self fishTappedAtLocation:x y:y];
+    
+    if (tappedFish)
+    {
+        [self launchProfileView];
+    }
+}
+
+
+-(FishView *)fishTappedAtLocation:(CGFloat)x y:(CGFloat)y
+{
+    
+    NSArray *oceanSubviews = [self.oceanView subviews];
+    NSMutableArray *allFish = [[NSMutableArray alloc] init];
+    
+    for (UIView *view in oceanSubviews)
+    {
+        if ([view isKindOfClass:[FishView class]])
+        {
+            [allFish addObject:view];
+        }
+    }
+    
+    for (FishView *fish in allFish)
+    {
+       
+        CGFloat currentX = [[fish.layer presentationLayer] frame].origin.x;
+        CGFloat currentY = [[fish.layer presentationLayer] frame].origin.y;
+        CGFloat height = fish.frame.size.height;
+        CGFloat width = fish.frame.size.width;
+        
+      BOOL isInFrame = [self fishFrame:currentX y:currentY width:width height:height tapLocationX:x tapLocationY:y];
+        
+        
+        if (isInFrame)
+        {
+            
+            return fish;
+            
+            break;
+        }
+  
+     }
+    
+    return nil;
+    
+}
+
+-(BOOL)fishFrame:(CGFloat)x y:(CGFloat)y width:(CGFloat)width height:(CGFloat)height tapLocationX:(CGFloat)tapLocationX tapLocationY:(CGFloat)tapLocationY
+{
+    
+    BOOL xInRange = tapLocationX >= x && tapLocationX <= x + width;
+    BOOL yInRange = tapLocationY >= y && tapLocationY <= y + height;
+    
+   // NSLog(@"X in range: %d, Y in range: %d", xInRange, yInRange);
+    
+    BOOL inRange = xInRange && yInRange;
+    
+    return inRange;
+
+}
 
 -(void)animateView: (FishView *)fishView
 {
@@ -190,8 +262,13 @@
     if (fishView.frame.origin.x == fishView.startingX)
     {
         
+<<<<<<< HEAD
 //        NSLog(@"in the if");
         
+=======
+    
+    
+>>>>>>> master
         CGFloat randomXMove = 50;
         CGFloat randomYMove = 0;
         
@@ -229,7 +306,10 @@
     else
     {
         
+<<<<<<< HEAD
 //         NSLog(@"in the else");
+=======
+>>>>>>> master
         
          NSUInteger time = arc4random_uniform(5);
     
@@ -312,7 +392,7 @@
         
         //newFish.backgroundColor = [self colorFromInteger:colorNumber];
         
-        if (i <1000)
+        if (i <500)
         {
             [self animateView:newFish];
         }
@@ -382,8 +462,9 @@
 
 -(void)launchProfileView
 {
+    self.oceanTapGestureRecognizer.enabled = NO;
     
-    self.profile = [[ProfileView alloc] init];
+    [self.profile hideAllContent];
     
     [self.view addSubview:self.profile];
     
@@ -398,7 +479,9 @@
     self.profileHeight.active = YES;
     self.profileWidth.active = YES;
     
-    //self.profile.layer.cornerRadius = 50;
+    self.profile.layer.cornerRadius = 50;
+    
+    [self.view layoutIfNeeded];
     
     
     [UIView animateWithDuration:.2 animations:^{
@@ -417,6 +500,10 @@
     } completion:^(BOOL finished) {
         
         self.profile.delegate = self;
+        
+        self.view.userInteractionEnabled = YES;
+        
+        [self.profile showAllContent];
         
     }];
     
@@ -446,6 +533,8 @@
     } completion:^(BOOL finished) {
         
         [self.profile removeFromSuperview];
+        
+        self.oceanTapGestureRecognizer.enabled = YES;
         
     }];
     

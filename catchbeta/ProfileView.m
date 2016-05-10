@@ -95,4 +95,53 @@
     
 }
 
+-(void)hideAllContent
+{
+    self.nameAndAgeLabel.alpha = 0;
+    self.hometownLabel.alpha = 0;
+    self.collegeAndGraduationYearLabel.alpha = 0;
+    self.jobAndTitleLabel.alpha = 0;
+    self.jobAndTitleLabel.alpha = 0;
+    self.aboutMeText.alpha = 0;
+    self.friend1.alpha = 0;
+    self.friend2.alpha = 0;
+    self.friend3.alpha = 0;
+    self.friend4.alpha = 0;
+    self.friend5.alpha = 0;
+    self.friend6.alpha = 0;
+    self.friend7.alpha = 0;
+
+    
+    
+//    @property (weak, nonatomic) IBOutlet UILabel *nameAndAgeLabel;
+//    @property (weak, nonatomic) IBOutlet UILabel *hometownLabel;
+//    @property (weak, nonatomic) IBOutlet UILabel *collegeAndGraduationYearLabel;
+//    @property (weak, nonatomic) IBOutlet UILabel *jobAndTitleLabel;
+//    @property (weak, nonatomic) IBOutlet UITextView *aboutMeText;
+//    @property (weak, nonatomic) IBOutlet MutualFriendView *friend1;
+//    @property (weak, nonatomic) IBOutlet MutualFriendView *friend2;
+//    @property (weak, nonatomic) IBOutlet MutualFriendView *friend3;
+//    @property (weak, nonatomic) IBOutlet MutualFriendView *friend4;
+//    @property (weak, nonatomic) IBOutlet MutualFriendView *friend5;
+//    @property (weak, nonatomic) IBOutlet MutualFriendView *friend6;
+//    @property (weak, nonatomic) IBOutlet MutualFriendView *friend7;
+}
+
+-(void)showAllContent
+{
+    self.nameAndAgeLabel.alpha = 1;
+    self.hometownLabel.alpha = 1;
+    self.collegeAndGraduationYearLabel.alpha = 1;
+    self.jobAndTitleLabel.alpha = 1;
+    self.jobAndTitleLabel.alpha = 1;
+    self.aboutMeText.alpha = 1;
+    self.friend1.alpha = 1;
+    self.friend2.alpha = 1;
+    self.friend3.alpha = 1;
+    self.friend4.alpha = 1;
+    self.friend5.alpha = 1;
+    self.friend6.alpha = 1;
+    self.friend7.alpha = 1;
+}
+
 @end

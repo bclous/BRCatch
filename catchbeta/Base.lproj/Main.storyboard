@@ -33,6 +33,10 @@
                                     </imageView>
                                     <imageView contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="oceantest1-1" translatesAutoresizingMaskIntoConstraints="NO" id="HSV-eg-KMd">
                                         <rect key="frame" x="0.0" y="100" width="1299" height="817"/>
+                                        <gestureRecognizers/>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="Lvc-vA-eyn" appends="YES" id="eHU-7w-sNf"/>
+                                        </connections>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="boatTestx1" translatesAutoresizingMaskIntoConstraints="NO" id="R0O-jL-dNE">
                                         <rect key="frame" x="16" y="45" width="234" height="100"/>
@@ -67,6 +71,7 @@
                     <connections>
                         <outlet property="boat" destination="R0O-jL-dNE" id="bcM-7Z-GjJ"/>
                         <outlet property="halfMileBouy" destination="kT0-aC-qoz" id="dYY-Re-gd8"/>
+                        <outlet property="oceanTapGestureRecognizer" destination="Lvc-vA-eyn" id="sYc-Gc-V3X"/>
                         <outlet property="oceanView" destination="HSV-eg-KMd" id="kat-qB-C8L"/>
                         <outlet property="profilePic" destination="WDw-4h-Q6x" id="Mj8-rE-0NJ"/>
                         <outlet property="scrollView" destination="rw8-Hx-ewW" id="6hB-UK-6vx"/>
@@ -74,6 +79,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="Lvc-vA-eyn">
+                    <connections>
+                        <action selector="oceanTapped:" destination="BYZ-38-t0r" id="OcM-NX-Dpq"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="238" y="326"/>
         </scene>

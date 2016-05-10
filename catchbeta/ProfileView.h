@@ -20,4 +20,7 @@
 @property (strong, nonatomic) Person *person;
 @property (weak, nonatomic) id <ProfileViewDelegate> delegate;
 
+-(void)hideAllContent;
+-(void)showAllContent;
+
 @end
