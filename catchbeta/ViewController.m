@@ -10,6 +10,7 @@
 #import "FishView.h"
 #import "ProfileView.h"
 #import "WhiteWhaleView.h"
+#import "GoldFishView.h"
 
 @interface ViewController () <UIScrollViewDelegate, FishViewDelegate, ProfileViewDelegate>
 
@@ -46,19 +47,19 @@
     
     self.scrollView.delegate = self;
     [self.oceanView addSubview:self.halfMileBouy];
-    [self.oceanView addSubview:self.boat];
+    //[self.oceanView addSubview:self.boat];
 
         [self.oceanView addSubview:self.profilePic];
     [self.oceanView addSubview:self.sun];
 
     
-    [self.boat setTranslatesAutoresizingMaskIntoConstraints:NO];
+   // [self.boat setTranslatesAutoresizingMaskIntoConstraints:NO];
     [self.sun setTranslatesAutoresizingMaskIntoConstraints:NO];
-    [self.profilePic setTranslatesAutoresizingMaskIntoConstraints:NO];
+   // [self.profilePic setTranslatesAutoresizingMaskIntoConstraints:NO];
     
     
-    [self.sun.rightAnchor constraintEqualToAnchor:self.view.rightAnchor constant:-20].active = YES;
-    [self.profilePic.leftAnchor constraintEqualToAnchor:self.view.leftAnchor constant:45].active = YES;
+   // [self.sun.rightAnchor constraintEqualToAnchor:self.view.rightAnchor constant:-20].active = YES;
+   // [self.profilePic.leftAnchor constraintEqualToAnchor:self.view.leftAnchor constant:45].active = YES;
     
     
 
@@ -241,7 +242,7 @@
         
         [UIView animateWithDuration:time + 5 delay:0 options:UIViewAnimationOptionAllowUserInteraction animations:^{
             
-            [fishView.fishImage setImage:[UIImage imageNamed:@"fishTestRight"]];
+            [fishView.fishImage setImage:[UIImage imageNamed:@"clownFish"]];
             
             fishView.frame = CGRectMake(xPosition, yPosition, self.fishWidth, self.fishHeight);
             
@@ -264,7 +265,7 @@
         
         [UIView animateWithDuration:time + 5 delay:0 options:UIViewAnimationOptionAllowUserInteraction animations:^{
             
-            [fishView.fishImage setImage:[UIImage imageNamed:@"fishTestLeft"]];
+            [fishView.fishImage setImage:[UIImage imageNamed:@"clownFish"]];
             
             fishView.frame = CGRectMake(fishView.startingX, fishView.startingY, self.fishWidth, self.fishHeight);
             
@@ -299,12 +300,13 @@
         NSUInteger faceIndex = i%7;
 //        NSUInteger fishIndex = i%5;
     
-        FishView *newFish = [[FishView alloc] initWithFrame:CGRectMake(xPosition, yPosition + 50, self.fishWidth, self.fishHeight )];
-        
+       FishView *newFish = [[FishView alloc] initWithFrame:CGRectMake(xPosition, yPosition + 50, self.fishWidth, self.fishHeight )];
+    
+                                 
         newFish.delegate = self;
         
         newFish.facePicture.image = [UIImage imageNamed: self.facePics[faceIndex]];
-        newFish.fishImage.image = [UIImage imageNamed:@"fishTestLeft"];
+        newFish.fishImage.image = [UIImage imageNamed:@"clownFish"];
         
         newFish.startingX = xPosition;
         newFish.startingY = yPosition + 50;
@@ -331,6 +333,14 @@
     WhiteWhaleView *whale = [[WhiteWhaleView alloc] initWithFrame:CGRectMake(xPosition, yPosition, 120, 60)];
     
     [self.oceanView addSubview:whale];
+    
+    CGFloat xPosition2 = arc4random_uniform(maxX);
+    CGFloat yPosition2 = arc4random_uniform(maxY);
+    
+    GoldFishView *goldFish = [[GoldFishView alloc] initWithFrame:CGRectMake(xPosition2, yPosition2, 60, 30)];
+    
+    [self.oceanView addSubview:goldFish];
+    
     
     
     NSLog(@"Done BUILDING FISHESSSS\n\n\n\n\n\n");

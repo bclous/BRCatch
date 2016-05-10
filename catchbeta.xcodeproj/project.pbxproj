@@ -24,6 +24,8 @@
 		AB2A38F61CE22067005DD03A /* Profile2.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB2A38F51CE22067005DD03A /* Profile2.xib */; };
 		AB2A38F81CE22958005DD03A /* WhiteWhale.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB2A38F71CE22958005DD03A /* WhiteWhale.xib */; };
 		AB2A38FB1CE22C01005DD03A /* WhiteWhaleView.m in Sources */ = {isa = PBXBuildFile; fileRef = AB2A38FA1CE22C01005DD03A /* WhiteWhaleView.m */; };
+		AB2A38FD1CE2634B005DD03A /* GoldFish.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB2A38FC1CE2634B005DD03A /* GoldFish.xib */; };
+		AB2A39001CE2651B005DD03A /* GoldFishView.m in Sources */ = {isa = PBXBuildFile; fileRef = AB2A38FF1CE2651B005DD03A /* GoldFishView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +54,9 @@
 		AB2A38F71CE22958005DD03A /* WhiteWhale.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WhiteWhale.xib; sourceTree = "<group>"; };
 		AB2A38F91CE22C01005DD03A /* WhiteWhaleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WhiteWhaleView.h; sourceTree = "<group>"; };
 		AB2A38FA1CE22C01005DD03A /* WhiteWhaleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WhiteWhaleView.m; sourceTree = "<group>"; };
+		AB2A38FC1CE2634B005DD03A /* GoldFish.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GoldFish.xib; sourceTree = "<group>"; };
+		AB2A38FE1CE2651B005DD03A /* GoldFishView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GoldFishView.h; sourceTree = "<group>"; };
+		AB2A38FF1CE2651B005DD03A /* GoldFishView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GoldFishView.m; sourceTree = "<group>"; };
 		C0D0A59BA64060D21BEC5408 /* Pods-catchbeta.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-catchbeta.debug.xcconfig"; path = "Pods/Target Support Files/Pods-catchbeta/Pods-catchbeta.debug.xcconfig"; sourceTree = "<group>"; };
 		C0E5AE8E334539E48A99834C /* libPods-catchbeta.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-catchbeta.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DDBDAC5E9B3B9F616A9D0992 /* Pods-catchbeta.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-catchbeta.release.xcconfig"; path = "Pods/Target Support Files/Pods-catchbeta/Pods-catchbeta.release.xcconfig"; sourceTree = "<group>"; };
@@ -108,10 +113,13 @@
 				AB2A38E91CDA4331005DD03A /* Person.m */,
 				AB2A38E61CD268D0005DD03A /* RedFish.xib */,
 				AB2A38F71CE22958005DD03A /* WhiteWhale.xib */,
+				AB2A38FC1CE2634B005DD03A /* GoldFish.xib */,
 				AB2A38F91CE22C01005DD03A /* WhiteWhaleView.h */,
 				AB2A38FA1CE22C01005DD03A /* WhiteWhaleView.m */,
 				AB2A38EB1CDA4606005DD03A /* Profile.xib */,
 				AB2A38F51CE22067005DD03A /* Profile2.xib */,
+				AB2A38FE1CE2651B005DD03A /* GoldFishView.h */,
+				AB2A38FF1CE2651B005DD03A /* GoldFishView.m */,
 				AB2A38ED1CDA5851005DD03A /* ProfileView.h */,
 				AB2A38EE1CDA5851005DD03A /* ProfileView.m */,
 				AB2A38F01CDA7FE4005DD03A /* MutualFriend.xib */,
@@ -205,6 +213,7 @@
 			files = (
 				AB2A38DC1CD1A709005DD03A /* LaunchScreen.storyboard in Resources */,
 				AB2A38F81CE22958005DD03A /* WhiteWhale.xib in Resources */,
+				AB2A38FD1CE2634B005DD03A /* GoldFish.xib in Resources */,
 				AB2A38F61CE22067005DD03A /* Profile2.xib in Resources */,
 				AB2A38F11CDA7FE4005DD03A /* MutualFriend.xib in Resources */,
 				AB2A38E71CD268D0005DD03A /* RedFish.xib in Resources */,
@@ -277,6 +286,7 @@
 				AB2A38CE1CD1A709005DD03A /* main.m in Sources */,
 				AB2A38EF1CDA5851005DD03A /* ProfileView.m in Sources */,
 				AB2A38E51CD1AB9B005DD03A /* FishView.m in Sources */,
+				AB2A39001CE2651B005DD03A /* GoldFishView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

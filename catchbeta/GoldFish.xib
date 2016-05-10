@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="GoldFishView">
+            <connections>
+                <outlet property="contentView" destination="iN0-l3-epB" id="obS-B8-p57"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="610" height="250"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="laura" translatesAutoresizingMaskIntoConstraints="NO" id="aB5-xA-moq">
+                    <rect key="frame" x="247" y="50" width="159" height="155"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="clownFish" translatesAutoresizingMaskIntoConstraints="NO" id="2mM-P8-9HH">
+                    <rect key="frame" x="0.0" y="0.0" width="610" height="250"/>
+                </imageView>
+            </subviews>
+            <constraints>
+                <constraint firstItem="2mM-P8-9HH" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="DWU-3L-hMq"/>
+                <constraint firstItem="aB5-xA-moq" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" multiplier="1.07" id="NkJ-G9-JWf"/>
+                <constraint firstItem="2mM-P8-9HH" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" id="Rfk-WB-fT2"/>
+                <constraint firstItem="aB5-xA-moq" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" multiplier="1.02" id="SCp-Al-IJZ"/>
+                <constraint firstItem="2mM-P8-9HH" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="W71-Ii-oHI"/>
+                <constraint firstItem="aB5-xA-moq" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" multiplier="0.62" id="Xj0-LO-U8N"/>
+                <constraint firstItem="2mM-P8-9HH" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" id="h9l-ok-Cwl"/>
+                <constraint firstItem="aB5-xA-moq" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" multiplier="0.26" id="jAX-mX-1oq"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="275" y="196"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="clownFish" width="269" height="139"/>
+        <image name="laura" width="160" height="160"/>
+    </resources>
+</document>
