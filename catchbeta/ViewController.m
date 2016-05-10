@@ -262,13 +262,8 @@
     if (fishView.frame.origin.x == fishView.startingX)
     {
         
-<<<<<<< HEAD
 //        NSLog(@"in the if");
-        
-=======
-    
-    
->>>>>>> master
+
         CGFloat randomXMove = 50;
         CGFloat randomYMove = 0;
         
@@ -306,10 +301,8 @@
     else
     {
         
-<<<<<<< HEAD
 //         NSLog(@"in the else");
-=======
->>>>>>> master
+
         
          NSUInteger time = arc4random_uniform(5);
     
