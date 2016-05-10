@@ -32,7 +32,7 @@
 @property (strong, nonatomic) NSLayoutConstraint *profileWidth;
 @property (strong, nonatomic) IBOutlet UITapGestureRecognizer *oceanTapGestureRecognizer;
 
-
+@property (weak, nonatomic) IBOutlet UIImageView *sun;
 
 @end
 
@@ -47,10 +47,18 @@
     self.scrollView.delegate = self;
     [self.oceanView addSubview:self.halfMileBouy];
     [self.oceanView addSubview:self.boat];
-    [self.oceanView addSubview:self.profilePic];
+
+        [self.oceanView addSubview:self.profilePic];
+    [self.oceanView addSubview:self.sun];
+
+    
+    [self.boat setTranslatesAutoresizingMaskIntoConstraints:NO];
+    [self.sun setTranslatesAutoresizingMaskIntoConstraints:NO];
+    [self.profilePic setTranslatesAutoresizingMaskIntoConstraints:NO];
     
     
-    
+    [self.sun.rightAnchor constraintEqualToAnchor:self.view.rightAnchor constant:-20].active = YES;
+    [self.profilePic.leftAnchor constraintEqualToAnchor:self.view.leftAnchor constant:45].active = YES;
     
     
 
@@ -79,7 +87,49 @@
     return self.oceanView;
 }
 
+- (void)scrollViewDidEndZooming:(UIScrollView *)scrollView withView:(nullable UIView *)view atScale:(CGFloat)scale {
+    
+    
 
+    
+    
+}
+
+
+
+- (void)scrollViewDidScroll:(UIScrollView *)sender {
+    
+    
+    if (self.scrollView.contentOffset.x > 0 || self.scrollView.contentOffset.x < 0) {
+        
+        NSLog(@"%f", self.scrollView.contentOffset.x);
+        
+        NSLog(@"GETTING INTO THE X OFFSET");
+        
+        [self.boat.leftAnchor constraintEqualToAnchor:self.view.leftAnchor constant:10 + self.scrollView.contentOffset.x].active = NO;
+        
+        //         [self.boat setTranslatesAutoresizingMaskIntoConstraints:NO];
+        [self.boat.leftAnchor constraintEqualToAnchor:self.view.leftAnchor constant:10 + self.scrollView.contentOffset.x].active = YES;
+        [self.sun.rightAnchor constraintEqualToAnchor:self.view.rightAnchor constant: -20 + self.scrollView.contentOffset.x].active = YES;
+        [self.profilePic.leftAnchor constraintEqualToAnchor:self.view.leftAnchor constant:50 + self.scrollView.contentOffset.x].active = YES;
+        
+    }
+    
+    if (self.scrollView.contentOffset.y > 0 || self.scrollView.contentOffset.y < 0) {
+        
+        NSLog(@"GETTING INTO THE Y OFFSET");
+        
+        
+        [self.boat.topAnchor constraintEqualToAnchor:self.view.topAnchor constant:50 - self.scrollView.contentOffset.y].active = NO;
+    }
+    
+    NSLog(@"THIS IS WORKING");
+    
+    
+    
+    
+    
+}
 
 
 
