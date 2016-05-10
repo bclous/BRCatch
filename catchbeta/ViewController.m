@@ -136,7 +136,7 @@
              [self.boat.leftAnchor constraintEqualToAnchor:self.view.leftAnchor constant:10 + self.scrollView.contentOffset.x].active = NO;
              
              //         [self.boat setTranslatesAutoresizingMaskIntoConstraints:NO];
-             [self.boat.leftAnchor constraintEqualToAnchor:self.scrollView.leftAnchor constant:10 + self.scrollView.contentOffset.x].active = YES;
+             [self.boat.leftAnchor constraintEqualToAnchor:self.view.leftAnchor constant:10 + self.scrollView.contentOffset.x].active = YES;
              [self.sun.rightAnchor constraintEqualToAnchor:self.view.rightAnchor constant: -20 + self.scrollView.contentOffset.x].active = YES;
                  [self.profilePic.leftAnchor constraintEqualToAnchor:self.view.leftAnchor constant:50 + self.scrollView.contentOffset.x].active = YES;
              
