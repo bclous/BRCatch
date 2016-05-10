@@ -9,6 +9,7 @@
 #import "ViewController.h"
 #import "FishView.h"
 #import "ProfileView.h"
+#import "WhiteWhaleView.h"
 
 @interface ViewController () <UIScrollViewDelegate, FishViewDelegate, ProfileViewDelegate>
 
@@ -46,7 +47,7 @@
     self.scrollView.delegate = self;
     [self.oceanView addSubview:self.halfMileBouy];
     [self.oceanView addSubview:self.boat];
-        [self.oceanView addSubview:self.profilePic];
+    [self.oceanView addSubview:self.profilePic];
     
     
     
@@ -86,25 +87,16 @@
 {
 
     self.facePics = @[ @"ana", @"christine", @"courtney", @"katie", @"katie2", @"laura", @"mikayla" ];
-    
-//    self.fishPics = @[ @"greenFish", @"orangeFish", @"purpleFish", @"redFish", @"yellowFish"];
-    
-        self.fishPics = @[ @"fishTestRight", @"fishTestRight", @"fishTestRight", @"fishTestRight", @"fishTestRight"];
+    self.fishPics = @[ @"fishTestRight", @"fishTestRight", @"fishTestRight", @"fishTestRight", @"fishTestRight"];
     
     self.fishHeight = 20;
     self.fishWidth = 40;
     
-    
-
-    
     [self addFishToOcean];
-    
-    
     
 }
 - (IBAction)oceanTapped:(id)sender
 {
-    NSLog(@"ocean tapped");
     
     CGPoint locationOfTap = [self.oceanTapGestureRecognizer locationInView:self.oceanView];
     
@@ -165,8 +157,6 @@
     BOOL xInRange = tapLocationX >= x && tapLocationX <= x + width;
     BOOL yInRange = tapLocationY >= y && tapLocationY <= y + height;
     
-   // NSLog(@"X in range: %d, Y in range: %d", xInRange, yInRange);
-    
     BOOL inRange = xInRange && yInRange;
     
     return inRange;
@@ -175,7 +165,6 @@
 
 -(void)animateView: (FishView *)fishView
 {
-
     
     if (fishView.frame.origin.x == fishView.startingX)
     {
@@ -242,39 +231,14 @@
     
 }
 
-//-(void)setUpOceanGradient
-//{
-//    
-//    self.oceanView.layer.masksToBounds = YES;
-//    
-//    UIColor *color = [UIColor blackColor];
-//    
-//    //self.oceanView.backgroundColor = color;
-//    
-//    CAGradientLayer *gradientBg = [CAGradientLayer layer];
-//    gradientBg.frame = self.oceanView.frame;
-//    gradientBg.frame = self.oceanView.bounds;
-//    gradientBg.colors = [NSArray arrayWithObjects:
-//                         (id)color.CGColor,
-//                         (id)[UIColor blueColor].CGColor,
-//                         nil];
-//    // vertical gradient
-//    gradientBg.locations = [NSArray arrayWithObjects:
-//                            [NSNumber numberWithFloat:0.0f],
-//                            [NSNumber numberWithFloat:1.0f],
-//                            nil];
-//    
-//    // gradient background
-//    CALayer *layer = self.oceanView.layer;
-//    layer.masksToBounds = YES;
-//    [layer insertSublayer:gradientBg atIndex:0];
-//}
+
+
 
 
 -(void)addFishToOcean
 {
     
-    for (NSUInteger i = 0; i<= 500; i++)
+    for (NSUInteger i = 0; i<= 300; i++)
     {
         CGFloat maxX = self.oceanView.frame.size.width - 100;
         CGFloat maxY = self.oceanView.frame.size.height - 100;
@@ -308,50 +272,23 @@
     
     }
     
-    NSLog(@"Done BUILDING FISHESSSS\n\n\n\n\n\n");
+    CGFloat maxX = self.oceanView.frame.size.width - 100;
+    CGFloat maxY = self.oceanView.frame.size.height - 100;
     
+    CGFloat xPosition = arc4random_uniform(maxX);
+    CGFloat yPosition = arc4random_uniform(maxY);
+    
+    WhiteWhaleView *whale = [[WhiteWhaleView alloc] initWithFrame:CGRectMake(xPosition, yPosition, 120, 60)];
+    
+    [self.oceanView addSubview:whale];
+    
+    
+    NSLog(@"Done BUILDING FISHESSSS\n\n\n\n\n\n");
+     
 }
 
 
-//-(UIColor *)colorFromInteger:(NSUInteger)number
-//{
-//    
-//    if (number == 0)
-//    {
-//        return [UIColor blueColor];
-//    }
-//    
-//    else if (number == 1)
-//    {
-//        return [UIColor redColor];
-//    }
-//    
-//    else if (number == 2)
-//    {
-//        return [UIColor orangeColor];
-//    }
-//    
-//    else if (number == 3)
-//    {
-//        return [UIColor yellowColor];
-//    }
-//    
-//    else if (number == 4)
-//    {
-//        return [UIColor grayColor];
-//    }
-//    
-//    else if (number == 5)
-//    {
-//        return [UIColor greenColor];
-//    }
-//    
-//    else
-//    {
-//        return [UIColor blackColor];
-//    }
-//    
-//}
+
 
 -(void)fishtapped:(Person *)person
 {
@@ -388,7 +325,7 @@
     self.profileHeight.active = YES;
     self.profileWidth.active = YES;
     
-    self.profile.layer.cornerRadius = 50;
+    
     
     [self.view layoutIfNeeded];
     
@@ -413,6 +350,8 @@
         self.view.userInteractionEnabled = YES;
         
         [self.profile showAllContent];
+        
+        self.profile.layer.cornerRadius = 50;
         
     }];
     

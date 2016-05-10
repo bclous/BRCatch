@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8707D9D7A022140B4825CDAB /* libPods-catchbeta.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C0E5AE8E334539E48A99834C /* libPods-catchbeta.a */; };
 		AB2A38CE1CD1A709005DD03A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AB2A38CD1CD1A709005DD03A /* main.m */; };
 		AB2A38D11CD1A709005DD03A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AB2A38D01CD1A709005DD03A /* AppDelegate.m */; };
 		AB2A38D41CD1A709005DD03A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB2A38D31CD1A709005DD03A /* ViewController.m */; };
@@ -20,6 +21,9 @@
 		AB2A38EF1CDA5851005DD03A /* ProfileView.m in Sources */ = {isa = PBXBuildFile; fileRef = AB2A38EE1CDA5851005DD03A /* ProfileView.m */; };
 		AB2A38F11CDA7FE4005DD03A /* MutualFriend.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB2A38F01CDA7FE4005DD03A /* MutualFriend.xib */; };
 		AB2A38F41CDA826D005DD03A /* MutualFriendView.m in Sources */ = {isa = PBXBuildFile; fileRef = AB2A38F31CDA826D005DD03A /* MutualFriendView.m */; };
+		AB2A38F61CE22067005DD03A /* Profile2.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB2A38F51CE22067005DD03A /* Profile2.xib */; };
+		AB2A38F81CE22958005DD03A /* WhiteWhale.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB2A38F71CE22958005DD03A /* WhiteWhale.xib */; };
+		AB2A38FB1CE22C01005DD03A /* WhiteWhaleView.m in Sources */ = {isa = PBXBuildFile; fileRef = AB2A38FA1CE22C01005DD03A /* WhiteWhaleView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +48,13 @@
 		AB2A38F01CDA7FE4005DD03A /* MutualFriend.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MutualFriend.xib; sourceTree = "<group>"; };
 		AB2A38F21CDA826D005DD03A /* MutualFriendView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MutualFriendView.h; sourceTree = "<group>"; };
 		AB2A38F31CDA826D005DD03A /* MutualFriendView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MutualFriendView.m; sourceTree = "<group>"; };
+		AB2A38F51CE22067005DD03A /* Profile2.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Profile2.xib; sourceTree = "<group>"; };
+		AB2A38F71CE22958005DD03A /* WhiteWhale.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WhiteWhale.xib; sourceTree = "<group>"; };
+		AB2A38F91CE22C01005DD03A /* WhiteWhaleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WhiteWhaleView.h; sourceTree = "<group>"; };
+		AB2A38FA1CE22C01005DD03A /* WhiteWhaleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WhiteWhaleView.m; sourceTree = "<group>"; };
+		C0D0A59BA64060D21BEC5408 /* Pods-catchbeta.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-catchbeta.debug.xcconfig"; path = "Pods/Target Support Files/Pods-catchbeta/Pods-catchbeta.debug.xcconfig"; sourceTree = "<group>"; };
+		C0E5AE8E334539E48A99834C /* libPods-catchbeta.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-catchbeta.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DDBDAC5E9B3B9F616A9D0992 /* Pods-catchbeta.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-catchbeta.release.xcconfig"; path = "Pods/Target Support Files/Pods-catchbeta/Pods-catchbeta.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,17 +62,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8707D9D7A022140B4825CDAB /* libPods-catchbeta.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		07732997AB1E36FA43E5202F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C0E5AE8E334539E48A99834C /* libPods-catchbeta.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		AB2A38C01CD1A709005DD03A = {
 			isa = PBXGroup;
 			children = (
 				AB2A38CB1CD1A709005DD03A /* catchbeta */,
 				AB2A38CA1CD1A709005DD03A /* Products */,
+				F6150BD532F5A921114A2D87 /* Pods */,
+				07732997AB1E36FA43E5202F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -85,7 +107,11 @@
 				AB2A38E81CDA4331005DD03A /* Person.h */,
 				AB2A38E91CDA4331005DD03A /* Person.m */,
 				AB2A38E61CD268D0005DD03A /* RedFish.xib */,
+				AB2A38F71CE22958005DD03A /* WhiteWhale.xib */,
+				AB2A38F91CE22C01005DD03A /* WhiteWhaleView.h */,
+				AB2A38FA1CE22C01005DD03A /* WhiteWhaleView.m */,
 				AB2A38EB1CDA4606005DD03A /* Profile.xib */,
+				AB2A38F51CE22067005DD03A /* Profile2.xib */,
 				AB2A38ED1CDA5851005DD03A /* ProfileView.h */,
 				AB2A38EE1CDA5851005DD03A /* ProfileView.m */,
 				AB2A38F01CDA7FE4005DD03A /* MutualFriend.xib */,
@@ -108,6 +134,15 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		F6150BD532F5A921114A2D87 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C0D0A59BA64060D21BEC5408 /* Pods-catchbeta.debug.xcconfig */,
+				DDBDAC5E9B3B9F616A9D0992 /* Pods-catchbeta.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -115,9 +150,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = AB2A38E01CD1A709005DD03A /* Build configuration list for PBXNativeTarget "catchbeta" */;
 			buildPhases = (
+				343AACBB0EAD6BB09F910898 /* Check Pods Manifest.lock */,
 				AB2A38C51CD1A709005DD03A /* Sources */,
 				AB2A38C61CD1A709005DD03A /* Frameworks */,
 				AB2A38C71CD1A709005DD03A /* Resources */,
+				16A5A057F2551AD0F82A3F49 /* Embed Pods Frameworks */,
+				A111E0AF496DF2568D4CECD2 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -166,6 +204,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				AB2A38DC1CD1A709005DD03A /* LaunchScreen.storyboard in Resources */,
+				AB2A38F81CE22958005DD03A /* WhiteWhale.xib in Resources */,
+				AB2A38F61CE22067005DD03A /* Profile2.xib in Resources */,
 				AB2A38F11CDA7FE4005DD03A /* MutualFriend.xib in Resources */,
 				AB2A38E71CD268D0005DD03A /* RedFish.xib in Resources */,
 				AB2A38EC1CDA4606005DD03A /* Profile.xib in Resources */,
@@ -176,11 +216,60 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		16A5A057F2551AD0F82A3F49 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-catchbeta/Pods-catchbeta-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		343AACBB0EAD6BB09F910898 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		A111E0AF496DF2568D4CECD2 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-catchbeta/Pods-catchbeta-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		AB2A38C51CD1A709005DD03A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AB2A38FB1CE22C01005DD03A /* WhiteWhaleView.m in Sources */,
 				AB2A38D41CD1A709005DD03A /* ViewController.m in Sources */,
 				AB2A38D11CD1A709005DD03A /* AppDelegate.m in Sources */,
 				AB2A38F41CDA826D005DD03A /* MutualFriendView.m in Sources */,
@@ -295,6 +384,7 @@
 		};
 		AB2A38E11CD1A709005DD03A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C0D0A59BA64060D21BEC5408 /* Pods-catchbeta.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = catchbeta/Info.plist;
@@ -306,6 +396,7 @@
 		};
 		AB2A38E21CD1A709005DD03A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DDBDAC5E9B3B9F616A9D0992 /* Pods-catchbeta.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = catchbeta/Info.plist;

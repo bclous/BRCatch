@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="1040" height="298"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="idc-f6-691">
+                    <rect key="frame" x="0.0" y="0.0" width="314" height="298"/>
+                </scrollView>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ibw-PO-VhJ">
+                    <rect key="frame" x="314" y="0.0" width="315" height="298"/>
+                </scrollView>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="ibw-PO-VhJ" secondAttribute="trailing" id="F10-OM-i2r"/>
+                <constraint firstAttribute="bottom" secondItem="ibw-PO-VhJ" secondAttribute="bottom" id="JH6-wO-jAR"/>
+                <constraint firstItem="ibw-PO-VhJ" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="Sgh-1w-0j5"/>
+                <constraint firstAttribute="bottom" secondItem="idc-f6-691" secondAttribute="bottom" id="Y2L-CO-oEI"/>
+                <constraint firstItem="ibw-PO-VhJ" firstAttribute="leading" secondItem="idc-f6-691" secondAttribute="trailing" id="Zcb-5a-f1k"/>
+                <constraint firstItem="idc-f6-691" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="dVC-fc-hWE"/>
+                <constraint firstItem="idc-f6-691" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" multiplier="0.5" id="llC-y5-bN1"/>
+                <constraint firstItem="idc-f6-691" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="sjk-ql-Kir"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="653" y="292"/>
+        </view>
+    </objects>
+</document>
